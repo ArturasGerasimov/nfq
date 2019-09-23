@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {% for user in users %}
+        <span>
+            {{ user.username}}
+            {{ user.surname}}
+            <div>
+                 <span>
+                    {{ user.hours}}val.
+                </span>
+                <span>
+                    {{ user.minutes}}min.
+                </span>
+            </div>
+        </span> <br>
+    {% endfor %}
+
+    <div class="mt-5">
+        <button class="btn btn-secondary">
+            <a class="text-white" href="{{ path('specialist-page') }}">Specialistui</a>
+        </button>
+        <button class="btn btn-secondary">
+            <a class="text-white" href="{{ path('admin-page') }}">Registracija</a>
+        </button>
+    </div>
+
+
+{% endblock %}

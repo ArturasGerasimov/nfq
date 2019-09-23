@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+
+    {% for user in users %}
+        <span>
+            <a class="btn btn-outline-danger" href="{{ path('delete-user', {'user': user.id}) }}" onclick="return confirm('Ar tikrai?')">Aptarnautas</a>
+            {{ user.username}}
+            {{ user.surname}}
+        </span> <br>
+    {% endfor %}
+
+    <div class="mt-5">
+        <button class="btn btn-secondary">
+            <a class="text-white" href="{{ path('queue-page') }}">Eiles</a>
+        </button>
+        <button class="btn btn-secondary">
+            <a class="text-white" href="{{ path('admin-page') }}">Registracija</a>
+        </button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="container mt-5">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.surname) }}
+        {{ form_row(form.submit) }}
+        {{ form_end(form) }}
+
+        <div class="mt-5">
+            <button class="btn btn-secondary">
+                <a class="text-white" href="{{ path('queue-page') }}">Eiles</a>
+            </button>
+            <button class="btn btn-secondary">
+                <a class="text-white" href="{{ path('specialist-page') }}">Specialistui</a>
+            </button>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
