@@ -22,19 +22,23 @@ class UserRepository extends ServiceEntityRepository
     // /**
     //  * @return User[] Returns an array of User objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findAllMinutes($user)
     {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
+            ->select('u.minutes')
+            ->andWhere('not u.id = :user_id')
+            ->setParameter('user_id', $user->getId())
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
+//    public function findAllMinutesOther($user)
+//    {
+//        $builder = $this->createQueryBuilder();
+//    }
+
 
     /*
     public function findOneBySomeField($value): ?User

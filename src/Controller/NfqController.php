@@ -81,4 +81,25 @@ class NfqController extends AbstractController
         return  $this->redirectToRoute('specialist-page');
     }
 
+    /**
+     * @Route("/time-left", name="time-left")
+     */
+    public function timeLeft()
+    {
+
+//        $user = $this->getUser();
+        $user =$this->getDoctrine()->getRepository(User::class)->findOneBy(['id' => 37]);
+
+        $usersMinutes = $this->getDoctrine()->getRepository(User::class)->findAllMinutes($user);
+
+        $total = 0;
+
+        foreach ($usersMinutes as $usersMinute){
+           $total += $usersMinute['minutes'];
+        }
+
+            return $this->render("usertimeleft/time-left.html.twig", [
+                "timeLeft" => $total
+            ]);
+    }
 }

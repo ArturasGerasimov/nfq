@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+        <div class="container">
+                {{ timeLeft }} Minutes
+
+            <div class="mt-5">
+                <button class="btn btn-secondary">
+                    <a class="text-white" href="{{ path('queue-page') }}">Eiles</a>
+                </button>
+                <button class="btn btn-secondary">
+                    <a class="text-white" href="{{ path('specialist-page') }}">Specialistui</a>
+                </button>
+                <button class="btn btn-secondary">
+                    <a class="text-white" href="{{ path('admin-page') }}">Registracija</a>
+                </button>
+            </div>
+
+        </div>
+
+
+
+{% endblock %}
